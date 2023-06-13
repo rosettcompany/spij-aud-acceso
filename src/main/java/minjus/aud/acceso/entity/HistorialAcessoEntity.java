@@ -9,7 +9,7 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "historialAcceso")
+@Table(name = "aud_acceso")
 public class HistorialAcessoEntity {
 	@Id
 	@Column(name = "accesoID")
@@ -100,6 +100,10 @@ public class HistorialAcessoEntity {
 		this.tipo_usuario = tipo_usuario;
 		this.acceso_activo = acceso_activo;
 		this.tiempo_sesion = tiempo_sesion;
+	}
+
+	public HistorialAcessoEntity() {
+		super();
 	}
 
 

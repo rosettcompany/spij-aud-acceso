@@ -21,7 +21,7 @@ import minjus.aud.acceso.service.impl.ClienteServiceImpl;
 @RestController
 //@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/apiBus")
+@RequestMapping("/apiAcceso")
 public class HistorialAcessoController {
 
 	@Autowired
