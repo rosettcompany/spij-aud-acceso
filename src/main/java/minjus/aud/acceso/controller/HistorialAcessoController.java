@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import minjus.aud.acceso.entity.ClienteEntity;
 import minjus.aud.acceso.entity.HistorialAcessoEntity;
-import minjus.aud.acceso.service.IClienteService;
 import minjus.aud.acceso.service.IHistorialAcessoService;
-import minjus.aud.acceso.service.impl.ClienteServiceImpl;
 
 @RestController
 //@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
@@ -24,20 +21,11 @@ import minjus.aud.acceso.service.impl.ClienteServiceImpl;
 @RequestMapping("/apiAcceso")
 public class HistorialAcessoController {
 
-	@Autowired
-	private IClienteService clienteService;
+
 	@Autowired
 	private IHistorialAcessoService historialAcessoService;
 	
 	
-	@RequestMapping(value = "/listaClientes", method = RequestMethod.GET)
-	public ResponseEntity<List<ClienteEntity>> getClientes() throws Exception {
-		System.out.println("Hola");
-		List<ClienteEntity> listaClientes = clienteService.findAll();
-
-		return ResponseEntity.ok(listaClientes);
-
-	}
 
 	@RequestMapping(value = "/listaHistorial", method = RequestMethod.GET)
 	public ResponseEntity<List<HistorialAcessoEntity>> getHistorial() throws Exception {
