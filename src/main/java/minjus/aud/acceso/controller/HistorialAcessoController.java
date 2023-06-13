@@ -41,14 +41,14 @@ public class HistorialAcessoController {
 	public ResponseEntity<?> registrarAcceso(@RequestBody HistorialAcessoEntity aud) throws Exception{
 		
 		System.out.println(aud.getAudit_usuario());
-		String data = historialAcessoService.registrarAcceso(aud);
-		return new ResponseEntity<>(data,HttpStatus.OK);
+		historialAcessoService.registrarAcceso(aud);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	@RequestMapping(value="/cierresesion",method = RequestMethod.POST)
-	public ResponseEntity<?> registrarClienteCelular(@RequestBody HistorialAcessoEntity aud) throws Exception{
+	public ResponseEntity<?> cierresesion(@RequestBody HistorialAcessoEntity aud) throws Exception{
 		
-		String data = historialAcessoService.cierreSesion(aud);
-		return new ResponseEntity<>(data,HttpStatus.OK);
+		historialAcessoService.cierreSesion(aud);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }

@@ -114,6 +114,12 @@ public Integer getAcceso_activo() {
     return acceso_activo;
 }
 
+public HistorialAcessoEntity(String audit_usuario, String tipo_usuario) {
+	super();
+	this.audit_usuario = audit_usuario;
+	this.tipo_usuario = tipo_usuario;
+}
+
 public void setAcceso_activo(Integer acceso_activo) {
     this.acceso_activo = acceso_activo;
 }
