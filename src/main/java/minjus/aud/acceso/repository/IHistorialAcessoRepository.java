@@ -13,7 +13,7 @@ import minjus.aud.acceso.entity.HistorialAcessoEntity;
 public interface IHistorialAcessoRepository  extends CrudRepository<HistorialAcessoEntity, Integer>{
 	@Procedure(name="registrarAcceso")
 	public  String registrarAcceso(
-			@Param("audit_fecha_hora_acceso") Timestamp audit_fecha_hora_acceso,
+			//@Param("audit_fecha_hora_acceso") Timestamp audit_fecha_hora_acceso,
 			//@Param("audit_fecha_cierre") Timestamp audit_fecha_cierre,
 			@Param("audit_usuario") String audit_usuario,
 			@Param("tipo_usuario") String tipo_usuario,
@@ -22,9 +22,9 @@ public interface IHistorialAcessoRepository  extends CrudRepository<HistorialAce
 			) ;
 	@Procedure(name="cierreSesion")
 	public  String cierreSesion(
-			@Param("accesoID") int accesoID,
+			//@Param("accesoID") int accesoID,
 			//@Param("audit_fecha_hora_acceso") Timestamp audit_fecha_hora_acceso,
-			@Param("audit_fecha_cierre") Timestamp audit_fecha_cierre,
+			//@Param("audit_fecha_cierre") Timestamp audit_fecha_cierre,
 			@Param("audit_usuario") String audit_usuario,
 			@Param("tipo_usuario") String tipo_usuario,
 			@Param("acceso_activo") int acceso_activo

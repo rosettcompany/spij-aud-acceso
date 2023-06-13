@@ -8,12 +8,12 @@
 		<version>2.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ecobus</groupId>
-	<artifactId>bus.api</artifactId>
+	<groupId>minjus.aud.acceso</groupId>
+	<artifactId>spij.aud.acceso</artifactId>
 	<version>1</version>
 	<packaging>war</packaging>
-	<name>bus.api</name>
-	<description>api rest de las buses de la app ecobus</description>
+	<name>spij.aud.acceso</name>
+	<description>api del servicio de historial</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -44,6 +44,12 @@
 	   	 	<artifactId>gson</artifactId>
 	    	<version>2.8.0</version>
 		</dependency>
+		  <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.26</version>
+    </dependency>
+    
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
