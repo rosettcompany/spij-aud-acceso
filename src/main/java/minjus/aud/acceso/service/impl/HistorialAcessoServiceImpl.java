@@ -28,8 +28,8 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService{
 				//aud.getAudit_fecha_hora_acceso(),
 				//aud.getAudit_fecha_cierre(),
 				aud.getAudit_usuario(),
-				aud.getTipo_usuario(),
-				aud.getAcceso_activo()
+				aud.getTipo_usuario()
+				//aud.getAcceso_activo()
 				//aud.getTiempo_sesion()
 				);
 	}
@@ -40,8 +40,8 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService{
 				//aud.getAudit_fecha_hora_acceso(),
 				//aud.getAudit_fecha_cierre(),
 				aud.getAudit_usuario(),
-				aud.getTipo_usuario(),
-				aud.getAcceso_activo()
+				aud.getTipo_usuario()
+				//aud.getAcceso_activo()
 				//aud.getTiempo_sesion()
 				);
 	}

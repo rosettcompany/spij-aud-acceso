@@ -16,8 +16,8 @@ public interface IHistorialAcessoRepository  extends CrudRepository<HistorialAce
 			//@Param("audit_fecha_hora_acceso") Timestamp audit_fecha_hora_acceso,
 			//@Param("audit_fecha_cierre") Timestamp audit_fecha_cierre,
 			@Param("audit_usuario") String audit_usuario,
-			@Param("tipo_usuario") String tipo_usuario,
-			@Param("acceso_activo") int acceso_activo
+			@Param("tipo_usuario") String tipo_usuario
+			//@Param("acceso_activo") int acceso_activo
 			//@Param("tiempo_sesion") int tiempo_sesion
 			) ;
 	@Procedure(name="cierreSesion")
@@ -26,8 +26,8 @@ public interface IHistorialAcessoRepository  extends CrudRepository<HistorialAce
 			//@Param("audit_fecha_hora_acceso") Timestamp audit_fecha_hora_acceso,
 			//@Param("audit_fecha_cierre") Timestamp audit_fecha_cierre,
 			@Param("audit_usuario") String audit_usuario,
-			@Param("tipo_usuario") String tipo_usuario,
-			@Param("acceso_activo") int acceso_activo
+			@Param("tipo_usuario") String tipo_usuario
+			//@Param("acceso_activo") int acceso_activo
 			//@Param("tiempo_sesion") int tiempo_sesion
 			) ;
 	
