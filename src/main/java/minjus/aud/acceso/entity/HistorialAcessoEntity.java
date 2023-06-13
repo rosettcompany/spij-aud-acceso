@@ -1,6 +1,7 @@
 package minjus.aud.acceso.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,22 +20,24 @@ import javax.persistence.Table;
 
 		@NamedStoredProcedureQuery(name = "registrarAcceso", procedureName = "registrarAcceso", parameters = {
 
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_hora_acceso", type = Date.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_cierre", type = Date.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_hora_acceso", type = Timestamp.class),
+				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_cierre", type = Timestamp.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tipo_usuario", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "acceso_activo", type = int.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) }),
+				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) 
+				}),
 		
 		
 		@NamedStoredProcedureQuery(name = "cierreSesion", procedureName = "cierreSesion", parameters = {
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "accesoID", type = int.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_hora_acceso", type = Date.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_cierre", type = Date.class),
+				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_hora_acceso", type = Timestamp.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_cierre", type = Timestamp.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tipo_usuario", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "acceso_activo", type = int.class),
-				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) }),
+//				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) 
+				}),
 		
 
 })
@@ -45,10 +48,10 @@ public class HistorialAcessoEntity {
 	public int accesoID;
 
 	@Column(name = "audit_fecha_hora_acceso")
-	public Date audit_fecha_hora_acceso;
+	public Timestamp audit_fecha_hora_acceso;
 
 	@Column(name = "audit_fecha_cierre")
-	public Date audit_fecha_cierre ;
+	public Timestamp audit_fecha_cierre ;
 
 	@Column(name = "audit_usuario")
 	public String audit_usuario;
@@ -60,7 +63,7 @@ public class HistorialAcessoEntity {
 	public Integer acceso_activo;
 	
 	@Column(name = "tiempo_sesion")
-	public int tiempo_sesion ;
+	public Integer tiempo_sesion ;
 
 	public int getAccesoID() {
 		return accesoID;
@@ -70,19 +73,19 @@ public class HistorialAcessoEntity {
 		this.accesoID = accesoID;
 	}
 
-	public Date getAudit_fecha_hora_acceso() {
+	public Timestamp getAudit_fecha_hora_acceso() {
 		return audit_fecha_hora_acceso;
 	}
 
-	public void setAudit_fecha_hora_acceso(Date audit_fecha_hora_acceso) {
+	public void setAudit_fecha_hora_acceso(Timestamp audit_fecha_hora_acceso) {
 		this.audit_fecha_hora_acceso = audit_fecha_hora_acceso;
 	}
 
-	public Date getAudit_fecha_cierre() {
+	public Timestamp getAudit_fecha_cierre() {
 		return audit_fecha_cierre;
 	}
 
-	public void setAudit_fecha_cierre(Date audit_fecha_cierre) {
+	public void setAudit_fecha_cierre(Timestamp audit_fecha_cierre) {
 		this.audit_fecha_cierre = audit_fecha_cierre;
 	}
 
@@ -94,11 +97,11 @@ public class HistorialAcessoEntity {
 		this.audit_usuario = audit_usuario;
 	}
 
-	public int getTiempo_sesion() {
+	public Integer getTiempo_sesion() {
 		return tiempo_sesion;
 	}
 
-	public void setTiempo_sesion(int tiempo_sesion) {
+	public void setTiempo_sesion(Integer tiempo_sesion) {
 		this.tiempo_sesion = tiempo_sesion;
 	}
 
@@ -118,8 +121,8 @@ public void setAcceso_activo(Integer acceso_activo) {
 		this.acceso_activo = acceso_activo;
 	}
 
-	public HistorialAcessoEntity(int accesoID, Date audit_fecha_hora_acceso, Date audit_fecha_cierre,
-			String audit_usuario, String tipo_usuario, int acceso_activo, int tiempo_sesion) {
+	public HistorialAcessoEntity(int accesoID, Timestamp audit_fecha_hora_acceso, Timestamp audit_fecha_cierre,
+			String audit_usuario, String tipo_usuario, int acceso_activo, Integer tiempo_sesion) {
 		super();
 		this.accesoID = accesoID;
 		this.audit_fecha_hora_acceso = audit_fecha_hora_acceso;

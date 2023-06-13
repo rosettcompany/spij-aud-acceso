@@ -26,23 +26,23 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService{
 	public String registrarAcceso(HistorialAcessoEntity aud) {
 		return iHistorialAcessoRepository.registrarAcceso(
 				aud.getAudit_fecha_hora_acceso(),
-				aud.getAudit_fecha_cierre(),
+				//aud.getAudit_fecha_cierre(),
 				aud.getAudit_usuario(),
 				aud.getTipo_usuario(),
-				aud.getAcceso_activo(),
-				aud.getTiempo_sesion()
+				aud.getAcceso_activo()
+				//aud.getTiempo_sesion()
 				);
 	}
 	
 	public String cierreSesion(HistorialAcessoEntity aud) {
 		return iHistorialAcessoRepository.cierreSesion(
 				aud.getAccesoID(),
-				aud.getAudit_fecha_hora_acceso(),
+				//aud.getAudit_fecha_hora_acceso(),
 				aud.getAudit_fecha_cierre(),
 				aud.getAudit_usuario(),
 				aud.getTipo_usuario(),
-				aud.getAcceso_activo(),
-				aud.getTiempo_sesion()
+				aud.getAcceso_activo()
+				//aud.getTiempo_sesion()
 				);
 	}
 	
