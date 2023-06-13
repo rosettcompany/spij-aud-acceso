@@ -52,7 +52,7 @@ public class HistorialAcessoController {
 	@RequestMapping(value="/audAcceso/registrar",method = RequestMethod.POST)
 	public ResponseEntity<?> registrarAcceso(@RequestBody HistorialAcessoEntity aud) throws Exception{
 		
-		
+		System.out.println(aud.getAudit_usuario());
 		String data = historialAcessoService.registrarAcceso(aud);
 		return new ResponseEntity<>(data,HttpStatus.OK);
 	}

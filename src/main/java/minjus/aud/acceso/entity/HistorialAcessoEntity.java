@@ -5,11 +5,39 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedStoredProcedureQueries;
+import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OrderBy;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "aud_acceso")
+
+@NamedStoredProcedureQueries(value = {
+
+		@NamedStoredProcedureQuery(name = "registrarAcceso", procedureName = "registrarAcceso", parameters = {
+
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_hora_acceso", type = Date.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_cierre", type = Date.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tipo_usuario", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "acceso_activo", type = int.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) }),
+		
+		
+		@NamedStoredProcedureQuery(name = "cierreSesion", procedureName = "cierreSesion", parameters = {
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "accesoID", type = int.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_hora_acceso", type = Date.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_cierre", type = Date.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tipo_usuario", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "acceso_activo", type = int.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) }),
+		
+
+})
 public class HistorialAcessoEntity {
 	@Id
 	@Column(name = "accesoID")
@@ -28,10 +56,10 @@ public class HistorialAcessoEntity {
 	@Column(name = "tipo_usuario")
 	public String tipo_usuario;
 
-	@Column(name = "acceso_activo ")
-	public int acceso_activo ;
+	@Column(name = "acceso_activo")
+	public Integer acceso_activo;
 	
-	@Column(name = "tiempo_sesion ")
+	@Column(name = "tiempo_sesion")
 	public int tiempo_sesion ;
 
 	public int getAccesoID() {
@@ -78,14 +106,14 @@ public class HistorialAcessoEntity {
 		return tipo_usuario;
 	}
 
-	public void setTipo_usuario(String tipo_usuario) {
-		this.tipo_usuario = tipo_usuario;
-	}
 
-	public int getAcceso_activo() {
-		return acceso_activo;
-	}
+public Integer getAcceso_activo() {
+    return acceso_activo;
+}
 
+public void setAcceso_activo(Integer acceso_activo) {
+    this.acceso_activo = acceso_activo;
+}
 	public void setAcceso_activo(int acceso_activo) {
 		this.acceso_activo = acceso_activo;
 	}
