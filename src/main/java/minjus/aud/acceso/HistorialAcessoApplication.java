@@ -9,16 +9,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @SpringBootApplication(scanBasePackages = { "minjus.aud.acceso" })
-public class BusApplication extends org.springframework.boot.web.servlet.support.SpringBootServletInitializer
+public class HistorialAcessoApplication extends org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 {
     public static void main( String[] args )
     {
-    	SpringApplication.run(BusApplication.class, args);
+    	SpringApplication.run(HistorialAcessoApplication.class, args);
     }
     
     @Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(BusApplication.class);
+		return builder.sources(HistorialAcessoApplication.class);
 	}	
     
     @Bean

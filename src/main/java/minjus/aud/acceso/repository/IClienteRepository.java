@@ -9,4 +9,5 @@ import minjus.aud.acceso.entity.ClienteEntity;
 
 @Repository
 public interface IClienteRepository extends CrudRepository<ClienteEntity, Integer>{ 
+	
 }
