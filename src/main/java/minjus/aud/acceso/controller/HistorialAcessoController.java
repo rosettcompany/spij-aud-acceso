@@ -18,7 +18,7 @@ import minjus.aud.acceso.service.IHistorialAcessoService;
 @RestController
 //@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/apiAcceso")
+@RequestMapping("/api")
 public class HistorialAcessoController {
 
 
@@ -29,7 +29,7 @@ public class HistorialAcessoController {
 
 	@RequestMapping(value = "/listaHistorial", method = RequestMethod.GET)
 	public ResponseEntity<List<HistorialAcessoEntity>> getHistorial() throws Exception {
-		System.out.println("Hola");
+		
 		List<HistorialAcessoEntity> listaHistorial = historialAcessoService.findAll();
 
 		return ResponseEntity.ok(listaHistorial);
@@ -37,10 +37,10 @@ public class HistorialAcessoController {
 	}
 	
 	
-	@RequestMapping(value="/audAcceso/registrar",method = RequestMethod.POST)
+	@RequestMapping(value="/registrar/acceso",method = RequestMethod.POST)
 	public ResponseEntity<?> registrarAcceso(@RequestBody HistorialAcessoEntity aud) throws Exception{
 		
-		System.out.println(aud.getAudit_usuario());
+		
 		historialAcessoService.registrarAcceso(aud);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}

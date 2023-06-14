@@ -1,5 +1,6 @@
 package minjus.aud.acceso.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,27 +24,19 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService{
 	}
 	
 	
-	public String registrarAcceso(HistorialAcessoEntity aud) {
-		return iHistorialAcessoRepository.registrarAcceso(
-				//aud.getAudit_fecha_hora_acceso(),
-				//aud.getAudit_fecha_cierre(),
-				aud.getAudit_usuario(),
-				aud.getTipo_usuario()
-				//aud.getAcceso_activo()
-				//aud.getTiempo_sesion()
-				);
+	public HashMap<String, Object> registrarAcceso(HistorialAcessoEntity aud) {
+	    String auditUsuario = aud.getAudit_usuario().toString();
+	    String tipoUsuario = aud.getTipo_usuario().toString();
+	    
+	    return iHistorialAcessoRepository.registrarAcceso(auditUsuario, tipoUsuario);
 	}
-	
-	public String cierreSesion(HistorialAcessoEntity aud) {
-		return iHistorialAcessoRepository.cierreSesion(
-				//aud.getAccesoID(),
-				//aud.getAudit_fecha_hora_acceso(),
-				//aud.getAudit_fecha_cierre(),
-				aud.getAudit_usuario(),
-				aud.getTipo_usuario()
-				//aud.getAcceso_activo()
-				//aud.getTiempo_sesion()
-				);
+
+	public HashMap<String, Object> cierreSesion(HistorialAcessoEntity aud) {
+	    String auditUsuario = aud.getAudit_usuario().toString();
+	    String tipoUsuario = aud.getTipo_usuario().toString();
+	    
+	    return iHistorialAcessoRepository.cierreSesion(auditUsuario, tipoUsuario);
 	}
+
 	
 }
