@@ -26,16 +26,16 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService{
 	
 	public HashMap<String, Object> registrarAcceso(HistorialAcessoEntity aud) {
 	    String auditUsuario = aud.getAudit_usuario().toString();
-	    String tipoUsuario = aud.getTipo_usuario().toString();
+	    //String tipoUsuario = aud.getTipo_usuario().toString();
 	    
-	    return iHistorialAcessoRepository.registrarAcceso(auditUsuario, tipoUsuario);
+	    return iHistorialAcessoRepository.registrarAcceso(auditUsuario);
 	}
 
 	public HashMap<String, Object> cierreSesion(HistorialAcessoEntity aud) {
 	    String auditUsuario = aud.getAudit_usuario().toString();
-	    String tipoUsuario = aud.getTipo_usuario().toString();
+	    //String tipoUsuario = aud.getTipo_usuario().toString();
 	    
-	    return iHistorialAcessoRepository.cierreSesion(auditUsuario, tipoUsuario);
+	    return iHistorialAcessoRepository.cierreSesion(auditUsuario);
 	}
 
 	
