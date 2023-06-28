@@ -1,5 +1,6 @@
 package minjus.aud.acceso.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -9,6 +10,6 @@ public interface IHistorialAcessoService {
 
 	public List<HistorialAcessoEntity> findAll();
 	
-	public String registrarAcceso(HistorialAcessoEntity aud);
-	public String cierreSesion(HistorialAcessoEntity aud);
+	public HashMap<String, Object> registrarAcceso(HistorialAcessoEntity aud);
+	public HashMap<String, Object> cierreSesion(HistorialAcessoEntity aud);
 }
