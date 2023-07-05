@@ -1,11 +1,11 @@
-package com.ecobus.bus.api;
+package minjus.aud.acceso.test;
 
 
 
 /**
  * Unit test for simple App.
  */
-public class BusApplicationTest 
+public class HistorialAccesoApplicationTest 
 {
     /**
      * Rigorous Test :-)
