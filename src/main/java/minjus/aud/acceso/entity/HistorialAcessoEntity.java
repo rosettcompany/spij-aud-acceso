@@ -23,9 +23,10 @@ import javax.persistence.Table;
 				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_hora_acceso", type = Timestamp.class),
 				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_fecha_cierre", type = Timestamp.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
-				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "tipo_usuario", type = String.class),
+//				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tipo_usuario", type = String.class),
 				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "acceso_activo", type = int.class),
-				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) 
+				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class),
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "token", type = String.class)
 				}),
 		
 		
@@ -36,7 +37,8 @@ import javax.persistence.Table;
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
 				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "tipo_usuario", type = String.class),
 				//@StoredProcedureParameter(mode = ParameterMode.IN, name = "acceso_activo", type = int.class),
-//				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) 
+//				@StoredProcedureParameter(mode = ParameterMode.IN, name = "tiempo_sesion", type = int.class) ,
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "token", type = String.class)
 				}),
 		
 
