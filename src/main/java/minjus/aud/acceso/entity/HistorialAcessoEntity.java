@@ -64,6 +64,9 @@ public class HistorialAcessoEntity {
 	
 	@Column(name = "tiempo_sesion")
 	public Integer tiempo_sesion ;
+	
+	@Column(name = "token")
+	public String token;
 
 	public int getAccesoID() {
 		return accesoID;
@@ -114,6 +117,18 @@ public Integer getAcceso_activo() {
     return acceso_activo;
 }
 
+public String getToken() {
+	return token;
+}
+
+public void setToken(String token) {
+	this.token = token;
+}
+
+public void setTipo_usuario(String tipo_usuario) {
+	this.tipo_usuario = tipo_usuario;
+}
+
 public HistorialAcessoEntity(String audit_usuario, String tipo_usuario) {
 	super();
 	this.audit_usuario = audit_usuario;
@@ -137,6 +152,19 @@ public void setAcceso_activo(Integer acceso_activo) {
 		this.tipo_usuario = tipo_usuario;
 		this.acceso_activo = acceso_activo;
 		this.tiempo_sesion = tiempo_sesion;
+	}
+
+	public HistorialAcessoEntity(int accesoID, Timestamp audit_fecha_hora_acceso, Timestamp audit_fecha_cierre,
+			String audit_usuario, String tipo_usuario, Integer acceso_activo, Integer tiempo_sesion, String token) {
+		super();
+		this.accesoID = accesoID;
+		this.audit_fecha_hora_acceso = audit_fecha_hora_acceso;
+		this.audit_fecha_cierre = audit_fecha_cierre;
+		this.audit_usuario = audit_usuario;
+		this.tipo_usuario = tipo_usuario;
+		this.acceso_activo = acceso_activo;
+		this.tiempo_sesion = tiempo_sesion;
+		this.token = token;
 	}
 
 	public HistorialAcessoEntity() {

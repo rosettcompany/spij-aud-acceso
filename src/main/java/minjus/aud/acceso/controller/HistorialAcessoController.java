@@ -16,8 +16,8 @@ import minjus.aud.acceso.entity.HistorialAcessoEntity;
 import minjus.aud.acceso.service.IHistorialAcessoService;
 
 @RestController
-//@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE })
+//@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class HistorialAcessoController {
 
