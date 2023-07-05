@@ -45,7 +45,7 @@ public class HistorialAcessoController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@RequestMapping(value="/cierresesion",method = RequestMethod.POST)
+	@RequestMapping(value="/cierre/sesion",method = RequestMethod.POST)
 	public ResponseEntity<?> cierresesion(@RequestBody HistorialAcessoEntity aud) throws Exception{
 		
 		historialAcessoService.cierreSesion(aud);
