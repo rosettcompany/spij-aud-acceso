@@ -1,6 +1,8 @@
 package minjus.aud.acceso.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,8 +41,6 @@ public class HistorialAcessoController {
 	
 	@RequestMapping(value="/registrar/acceso",method = RequestMethod.POST)
 	public ResponseEntity<?> registrarAcceso(@RequestBody HistorialAcessoEntity aud) throws Exception{
-		
-		
 		historialAcessoService.registrarAcceso(aud);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
@@ -51,4 +51,17 @@ public class HistorialAcessoController {
 		historialAcessoService.cierreSesion(aud);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/verificar/sesion", method = RequestMethod.POST)
+	public ResponseEntity<?> verificarSesion(@RequestBody HistorialAcessoEntity aud) throws Exception {
+		try {
+		String resultado = historialAcessoService.verificarSesion(aud);
+		System.out.print("controller: "+ resultado);
+	    return new ResponseEntity<>(resultado, HttpStatus.OK);}
+		catch (Error e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+					.body("Error al procesar la solicitud: " + e.getMessage());
+		}
+	}
+
 }

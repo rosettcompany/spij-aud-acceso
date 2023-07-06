@@ -2,6 +2,7 @@ package minjus.aud.acceso.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,20 +22,18 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService {
 		return (List<HistorialAcessoEntity>) iHistorialAcessoRepository.findAll();
 	}
 
-	public HashMap<String, Object> registrarAcceso(HistorialAcessoEntity aud) {
-		String auditUsuario = aud.getAudit_usuario().toString();
-		String token = aud.getToken().toString();
-		
-		System.out.println(auditUsuario);
-		System.out.println(token);
-		return iHistorialAcessoRepository.registrarAcceso(auditUsuario, token);
+	public String registrarAcceso(HistorialAcessoEntity aud) {
+		return iHistorialAcessoRepository.registrarAcceso(aud.getAudit_usuario(), aud.getToken());
 	}
 
-	public HashMap<String, Object> cierreSesion(HistorialAcessoEntity aud) {
-		String auditUsuario = aud.getAudit_usuario().toString();
-		String token = aud.getToken().toString();
+	public String cierreSesion(HistorialAcessoEntity aud) {
+		return iHistorialAcessoRepository.cierreSesion(aud.getAudit_usuario(), aud.getToken());
+	}
 
-		return iHistorialAcessoRepository.cierreSesion(auditUsuario, token);
+	@Override
+	public String  verificarSesion(HistorialAcessoEntity aud) {
+		System.out.println("service impl: " +(aud.getAudit_usuario()));
+		return (String) iHistorialAcessoRepository.verificarSesion(aud.getAudit_usuario());
 	}
 
 }
