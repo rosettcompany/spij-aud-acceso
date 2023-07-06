@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>minjus.aud.acceso</groupId>
-	<artifactId>spij.aud.acceso</artifactId>
+	<artifactId>spij-aud-acceso</artifactId>
 	<version>1</version>
 	<packaging>war</packaging>
-	<name>spij.aud.acceso</name>
+	<name>spij-aud-acceso</name>
 	<description>api del servicio de historial</description>
 
 	<properties>
@@ -54,6 +54,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>spij-aud-acceso</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
