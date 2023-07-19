@@ -26,5 +26,7 @@ public interface IHistorialAcessoRepository  extends CrudRepository<HistorialAce
 			) ;
 	
 	@Procedure(name="verificarSesion")
-	public String verificarSesion(@Param("audit_usuario") String audit_usuario);
+	public String verificarSesion(
+			@Param("accesoID") int accesoID,
+			@Param("audit_usuario") String audit_usuario);
 }

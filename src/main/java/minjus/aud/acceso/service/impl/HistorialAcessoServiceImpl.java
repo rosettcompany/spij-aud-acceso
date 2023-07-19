@@ -33,7 +33,7 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService {
 	@Override
 	public String  verificarSesion(HistorialAcessoEntity aud) {
 		System.out.println("service impl: " +(aud.getAudit_usuario()));
-		return (String) iHistorialAcessoRepository.verificarSesion(aud.getAudit_usuario());
+		return (String) iHistorialAcessoRepository.verificarSesion(aud.getAccesoID(),aud.getAudit_usuario());
 	}
 
 }
