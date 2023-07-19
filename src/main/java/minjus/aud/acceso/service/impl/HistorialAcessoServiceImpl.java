@@ -27,7 +27,7 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService {
 	}
 
 	public String cierreSesion(HistorialAcessoEntity aud) {
-		return iHistorialAcessoRepository.cierreSesion(aud.getAudit_usuario(), aud.getToken());
+		return iHistorialAcessoRepository.cierreSesion(aud.getAccesoID(),aud.getAudit_usuario(), aud.getToken());
 	}
 
 	@Override

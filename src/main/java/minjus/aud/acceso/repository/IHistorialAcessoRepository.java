@@ -21,6 +21,7 @@ public interface IHistorialAcessoRepository  extends CrudRepository<HistorialAce
 			) ;
 	@Procedure(name="cierreSesion")
 	public  String cierreSesion(
+			@Param("accesoID") int accesoID,
 			@Param("audit_usuario") String audit_usuario,
 			@Param("token") String token
 			) ;

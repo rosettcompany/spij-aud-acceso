@@ -26,6 +26,7 @@ import javax.persistence.Table;
 		
 		
 		@NamedStoredProcedureQuery(name = "cierreSesion", procedureName = "cierreSesion", parameters = {
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "accesoID", type = int.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "token", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.OUT, name = "out_resultado", type = String.class)
