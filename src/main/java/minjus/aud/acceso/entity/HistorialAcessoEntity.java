@@ -36,6 +36,10 @@ import javax.persistence.Table;
 				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
 				@StoredProcedureParameter(mode = ParameterMode.OUT, name = "out_resultado", type = String.class)
 				}),
+		@NamedStoredProcedureQuery(name = "ultimaSesion", procedureName = "ultimaSesion", parameters = {
+				@StoredProcedureParameter(mode = ParameterMode.IN, name = "audit_usuario", type = String.class),
+				@StoredProcedureParameter(mode = ParameterMode.OUT, name = "out_resultado", type = String.class)
+				}),
 
 })
 public class HistorialAcessoEntity {

@@ -63,5 +63,11 @@ public class HistorialAcessoController {
 					.body("Error al procesar la solicitud: " + e.getMessage());
 		}
 	}
+	
+	@RequestMapping(value="/ultima/sesion",method = RequestMethod.POST)
+	public ResponseEntity<?> ultimaSesion(@RequestBody HistorialAcessoEntity aud) throws Exception{
+		String resultado = historialAcessoService.ultimaSesion(aud);
+		return new ResponseEntity<>(resultado,HttpStatus.OK);
+	}
 
 }
