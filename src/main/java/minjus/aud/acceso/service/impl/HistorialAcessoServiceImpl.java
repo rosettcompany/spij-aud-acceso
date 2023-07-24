@@ -35,5 +35,10 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService {
 		System.out.println("service impl: " +(aud.getAudit_usuario()));
 		return (String) iHistorialAcessoRepository.verificarSesion(aud.getAccesoID(),aud.getAudit_usuario());
 	}
+	
+	@Override
+	public String  ultimaSesion(HistorialAcessoEntity aud) {
+		return (String) iHistorialAcessoRepository.ultimaSesion(aud.getAudit_usuario());
+	}
 
 }

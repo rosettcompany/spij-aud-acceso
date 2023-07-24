@@ -13,21 +13,17 @@ import org.springframework.stereotype.Repository;
 import minjus.aud.acceso.entity.HistorialAcessoEntity;
 
 @Repository
-public interface IHistorialAcessoRepository  extends CrudRepository<HistorialAcessoEntity, Integer>{
-	@Procedure(name="registrarAcceso")
-	public  String registrarAcceso(
-			@Param("audit_usuario") String audit_usuario,
-			@Param("token") String token
-			) ;
-	@Procedure(name="cierreSesion")
-	public  String cierreSesion(
-			@Param("accesoID") int accesoID,
-			@Param("audit_usuario") String audit_usuario,
-			@Param("token") String token
-			) ;
+public interface IHistorialAcessoRepository extends CrudRepository<HistorialAcessoEntity, Integer> {
+	@Procedure(name = "registrarAcceso")
+	public String registrarAcceso(@Param("audit_usuario") String audit_usuario, @Param("token") String token);
+
+	@Procedure(name = "cierreSesion")
+	public String cierreSesion(@Param("accesoID") int accesoID, @Param("audit_usuario") String audit_usuario,
+			@Param("token") String token);
+
+	@Procedure(name = "verificarSesion")
+	public String verificarSesion(@Param("accesoID") int accesoID, @Param("audit_usuario") String audit_usuario);
 	
-	@Procedure(name="verificarSesion")
-	public String verificarSesion(
-			@Param("accesoID") int accesoID,
-			@Param("audit_usuario") String audit_usuario);
+	@Procedure(name = "ultimaSesion")
+	public String ultimaSesion(@Param("audit_usuario") String audit_usuario);
 }
