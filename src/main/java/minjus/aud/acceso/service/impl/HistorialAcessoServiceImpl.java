@@ -17,11 +17,6 @@ public class HistorialAcessoServiceImpl implements IHistorialAcessoService {
 	@Autowired
 	private IHistorialAcessoRepository iHistorialAcessoRepository;
 
-	@Override
-	public List<HistorialAcessoEntity> findAll() {
-		return (List<HistorialAcessoEntity>) iHistorialAcessoRepository.findAll();
-	}
-
 	public String registrarAcceso(HistorialAcessoEntity aud) {
 		return iHistorialAcessoRepository.registrarAcceso(aud.getAudit_usuario(), aud.getToken());
 	}

@@ -8,7 +8,6 @@ import minjus.aud.acceso.entity.HistorialAcessoEntity;
 
 public interface IHistorialAcessoService {
 
-	public List<HistorialAcessoEntity> findAll();
 	public String verificarSesion(HistorialAcessoEntity aud);
 	public String ultimaSesion(HistorialAcessoEntity aud);
 	public String registrarAcceso(HistorialAcessoEntity aud);

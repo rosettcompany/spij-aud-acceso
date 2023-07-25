@@ -27,18 +27,6 @@ public class HistorialAcessoController {
 	@Autowired
 	private IHistorialAcessoService historialAcessoService;
 	
-	
-
-	@RequestMapping(value = "/listaHistorial", method = RequestMethod.GET)
-	public ResponseEntity<List<HistorialAcessoEntity>> getHistorial() throws Exception {
-		
-		List<HistorialAcessoEntity> listaHistorial = historialAcessoService.findAll();
-
-		return ResponseEntity.ok(listaHistorial);
-
-	}
-	
-	
 	@RequestMapping(value="/registrar/acceso",method = RequestMethod.POST)
 	public ResponseEntity<?> registrarAcceso(@RequestBody HistorialAcessoEntity aud) throws Exception{
 		historialAcessoService.registrarAcceso(aud);
